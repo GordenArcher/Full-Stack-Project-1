@@ -5,8 +5,7 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
-    user_name = 'Gorden'
-    return render (request, 'index.html', {'user_name':user_name})
+    return render (request, 'index.html')
 
 def services(request):
     return render (request, 'services.html')
