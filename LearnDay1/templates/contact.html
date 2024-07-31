@@ -1,0 +1,170 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'CSS/main.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/contact.css' %}">
+    <title>Contact | G-KANAD</title>
+</head>
+<body>
+
+
+    <div class="main_page">
+        <div class="__root">
+            <div class="main_container">
+                
+                <div id="nav_container">
+                    <nav>
+                        <div class="logo">
+                            <a href="/">
+                                G-KANAD
+                            </a>
+                        </div>
+
+                        <div class="nav_links">
+                            <ul>
+                                <li><a href="/"> <i class="bi bi-house"></i> Home</a></li>
+                                <li><a href="/#about"> <i class="bi bi-person"></i> About</a></li>
+                                <li><a href="/services"> <i class="bi bi-gear"></i> Services</a></li>
+                                <li><a href="/contact"> <i class="bi bi-person-lines-fill"></i> Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="mobile_Icon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="contact_body">
+                    <div class="contact_image">
+                        <img src="{% static '/images/contact.svg' %}" alt="Contact image">
+                    </div>
+                    <main>
+                        <div class="contact_container">
+                            <div class="contact_header">
+                                <header>
+                                    <h2>Contact Us</h2>
+                                    <h4>Fill up the form below to Send Us a message</h4>
+                                </header>
+
+                                <div class="accounts">
+                                    <div class="twitter icons">
+                                        <a href="https://twitter.com/khofi_offence" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                                    </div>
+                                    <div class="instagram icons">
+                                        <i class="bi bi-instagram"></i>
+                                    </div>
+                                    <div class="linkdin icons">
+                                        <a href="http://linkedin/e/GordenArcher" target="_blank" rel="noopener noreferrer">
+                                            <i class="bi bi-linkedin"></i>
+                                        </a>
+                                    </div>
+                                    <div class="github icons">
+                                        <a href="http://github/GordenArcher" target="_blank" rel="noopener noreferrer">
+                                            <i class="bi bi-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact_form">
+                                <form action="#">
+                                    <div class="form_body">
+                                        <div class="name_input grid">
+                                            <div class="first_name">
+                                                <input 
+                                                type="text" 
+                                                onchange="checkFirstname()" 
+                                                id="fName"
+                                                >
+
+                                                <label>First Name</label>
+                                            </div>
+
+                                            <div class="last_name">
+                                                <input 
+                                                type="text" 
+                                                onchange="checkLastname()" 
+                                                id="lName"
+                                                >
+
+                                                <label>Last Name</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="emph_input grid">
+                                            <div class="email">
+                                                <input 
+                                                type="email" 
+                                                onchange="checkEmail()" 
+                                                id="email"
+                                                >
+
+                                                <label>Email Address</label>
+                                            </div>
+
+                                            <div class="phone">
+                                                <input 
+                                                type="tel" 
+                                                onchange="checkPhone()" 
+                                                id="phone"
+                                                >
+
+                                                <label>Phone Number</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="message">
+                                            <div class="message_box">
+                                                <label>Your Message</label>
+                                                <textarea cols="30" rows="10" class="textArea"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="send_button">
+                                            <div class="btn">
+                                                <button type="submit" id="sentMessage">SUBMIT</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert_pop_send">
+        <div class="send_alert">
+            <h3>Submited</h3>
+            <span> <i class="bi bi-check-circle" ></i> </span>
+        </div>
+    </div>
+
+    <div class="alert_pop_send_fail">
+        <div class="send_alert_fail">
+            <h3>Please Fill all inputs</h3>
+            <span> <i class="bi bi-x-octagon" ></i> </span>
+        </div>
+    </div>
+
+    <div class="alert_pop_send_email">
+        <div class="send_alert_email">
+            <h3>You'll receive an email response in just a few minutes</h3>
+            <span> <i class="bi bi-hand-thumbs-up" ></i> </span>
+        </div>
+    </div>
+    
+
+    <script src="{% static 'CSS/contact.js' %}"></script>
+</body>
+</html>

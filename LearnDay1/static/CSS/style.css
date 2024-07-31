@@ -1,0 +1,591 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container_wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 10px;
+}
+
+.login_wrapper, .register_wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 18px #ccc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.register_wrapper {
+    width: 100%;
+    height: 90%;
+    margin: 20px auto;
+}
+
+.left_side {
+    width: 100%;
+    height: 100%;
+}
+
+.login_image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.login_image img {
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+}
+
+.right_side {
+    width: 100%;
+    height: 100%;
+}
+
+.main_login {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.main_login form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.register_header, .login_header{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login_header {
+    margin-bottom: 30px;
+}
+
+.login_header h2, .register_header h2 {
+    font-size: 2rem;
+    font-family: 800;
+    color: hsl(240, 100%, 3%);
+    text-transform: uppercase;
+}
+
+.register_error, .login_error{
+    position: relative;
+    text-align: center;
+}
+
+.register_error h4, .login_error{
+    color: red;
+    font-size: 1rem;
+}
+
+.login_error{
+    border-bottom: 30px;
+}
+
+.login_inputs, .register_inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 30px;
+    margin-top: -50px;
+}
+
+.register_inputs {
+    margin-top: -10px;
+}
+
+.username {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 8px;
+}
+
+.username label {
+    position: absolute;
+    color: hsla(0, 0%, 0%, 0.561);
+    font-size: 1.4rem;
+    z-index: 100;
+    margin-left: 10px;
+    top: 28%;
+    left: 0;
+    transition: all ease .4s;
+}
+
+.username input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    color: #000;
+    font-size: 1.4rem;
+    padding: 8px 35px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: all ease .4s;
+}
+
+.username input:focus {
+    border: 1px solid hsl(240, 100%, 50%);
+}
+
+.username input:focus~label,
+.username input:active~label {
+    position: absolute;
+    transform: translate(10px, -20px);
+    background-color: hsl(0, 0%, 100%);
+    font-size: .9rem;
+    border-right: 1px solid hsl(240, 100%, 50%);
+    border-left: 1px solid hsl(240, 100%, 50%);
+    color: hsl(240, 100%, 50%);
+    padding: 0 5px;
+}
+
+.email {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 8px;
+}
+
+.email label {
+    position: absolute;
+    color: hsla(0, 0%, 0%, 0.561);
+    font-size: 1.4rem;
+    z-index: 100;
+    margin-left: 10px;
+    top: 28%;
+    left: 0;
+    transition: all ease .4s;
+}
+
+.email input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    color: #000;
+    font-size: 1.4rem;
+    padding: 8px 35px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: all ease .4s;
+}
+
+.email input:focus {
+    border: 1px solid hsl(240, 100%, 50%);
+}
+
+.email input:focus~label,
+.email input:active~label {
+    position: absolute;
+    transform: translate(10px, -20px);
+    background-color: hsl(0, 0%, 100%);
+    font-size: .9rem;
+    border-right: 1px solid hsl(240, 100%, 50%);
+    border-left: 1px solid hsl(240, 100%, 50%);
+    color: hsl(240, 100%, 50%);
+    padding: 0 5px;
+}
+
+.password, .password2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: 28px;
+}
+
+.password label, .password2 label {
+    position: absolute;
+    color: hsla(0, 0%, 0%, 0.561);
+    font-size: 1.4rem;
+    z-index: 100;
+    margin-left: 10px;
+    top: 28%;
+    left: 0;
+    transition: all ease .4s;
+}
+
+.password input, .password2 input {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    outline: none;
+    color: #000;
+    font-size: 1.4rem;
+    padding: 8px 35px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: all ease .4s;
+}
+
+.password input:focus, .password2 input:focus {
+    border: 1px solid hsl(240, 100%, 50%);
+}
+
+.password input:active~label,
+.password input:focus~label {
+    position: absolute;
+    transform: translate(10px, -20px);
+    background-color: hsl(0, 0%, 100%);
+    font-size: .9rem;
+    border-right: 1px solid hsl(240, 100%, 50%);
+    border-left: 1px solid hsl(240, 100%, 50%);
+    color: hsl(240, 100%, 50%);
+    padding: 0 5px;
+}
+
+.password2 input:active~label,
+.password2 input:focus~label {
+    position: absolute;
+    transform: translate(10px, -20px);
+    background-color: hsl(0, 0%, 100%);
+    font-size: .9rem;
+    border-right: 1px solid hsl(240, 100%, 50%);
+    border-left: 1px solid hsl(240, 100%, 50%);
+    color: hsl(240, 100%, 50%);
+    padding: 0 5px;
+}
+
+.password .active, .password2 .active, .email .active,
+.username .active {
+    position: absolute;
+    transform: translate(10px, -20px);
+    background-color: hsl(0, 0%, 100%);
+    font-size: .9rem;
+    border-right: 1px solid hsl(240, 100%, 50%);
+    border-left: 1px solid hsl(240, 100%, 50%);
+    color: hsl(240, 100%, 50%);
+}
+
+.password .bi,
+.username .bi {
+    position: absolute;
+    right: 5px;
+    margin-top: 10px;
+    color: hsl(240, 100%, 50%);
+    width: 30px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.password_view {
+    position: relative;
+    padding: 0 30px;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.icon_view {
+    position: relative;
+    width: 45px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    background-color: #fff;
+    display: block;
+    transition: all ease .5s;
+}
+
+.icon_view::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: hsl(240, 100%, 50%);
+    border: none;
+    border-radius: 50%;
+    left: 2%;
+    top: 7%;
+    transition: all .5s ease;
+}
+
+#switch {
+    display: none;
+}
+
+#switch:checked~.icon_view::before {
+    background-color: hsl(0, 0%, 100%);
+    left: 60%;
+}
+
+#switch:checked~.icon_view {
+    background-color: hsl(240, 100%, 50%);
+    /* border: hsl(240, 100%, 50%); */
+}
+
+.login_btn, .register_btn {
+    position: relative;
+    width: 80%;
+    margin: 10px auto;
+}
+
+
+.login_btn {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+}
+
+
+.login_btn button, .register_btn button {
+    width: 100%;
+    height: 50px;
+    color: hsl(0, 0%, 0%);
+    font-size: 1.3rem;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.login_btn button:hover, .register_btn button:hover {
+    color: #fff;
+    background: hsl(240, 100%, 50%);
+}
+
+.login_link, .register_link{
+    padding-left: 30px;
+    font-size: 1.2rem;
+    transition: all .3s ease;
+}
+
+.login_link a:hover, .register_link a:hover{
+    color: hsla(240, 100%, 50%, 0.604);
+    text-decoration: line-through;
+}
+
+.toast_message_success,
+.toast_message_fail {
+    position: relative;
+    bottom: 12%;
+    opacity: 0;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+.toast_message_success.toast_message_active,
+.toast_message_fail.toast_message_active {
+    bottom: 20%;
+    opacity: 1;
+}
+
+.toast_message_fail.toast_message_active {
+    bottom: 15%;
+}
+
+.login_succes_toast,
+.login_fail_toast {
+    width: 250px;
+    height: 50px;
+    border: 1px solid hsl(240, 100%, 50%);
+    border-radius: 9px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    z-index: 99999;
+}
+
+.login_fail_toast {
+    border: 1px solid hsl(0, 100%, 50%);
+}
+
+.login_succes_toast h3 span,
+.login_fail_toast h3 span {
+    color: hsl(240, 100%, 50%);
+    font-size: 1.5rem;
+}
+
+.login_succes_toast span {
+    color: hsl(240, 100%, 50%);
+    font-size: 2rem;
+}
+
+.login_succes_toast h3 {
+    color: hsl(240, 100%, 50%);
+}
+
+.login_fail_toast h3 {
+    color: hsl(0, 100%, 50%);
+}
+
+.login_fail_toast span {
+    color: hsl(0, 100%, 50%);
+    font-size: 2rem;
+}
+
+.spinner_load {
+    position: absolute;
+    right: 45%;
+    top: 20%;
+    display: none;
+}
+
+.loader {
+    display: inherit;
+}
+
+.spinner {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: block;
+    border: 5px solid hsl(0, 0%, 0%);
+    border-top: 5px solid hsl(0, 0%, 100%);
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.toast_message_active_rem {
+    bottom: 10%;
+    opacity: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .login_wrapper {
+        width: 100%;
+        height: 70%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .left_side {
+        width: 100%;
+        height: 100px;
+        margin-left: -120px;
+    }
+    .login_image img {
+        position: absolute;
+        left: 0;
+    }
+    .right_side {
+        width: 100%;
+        height: 100%;
+    }
+    .main_login form {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2px;
+    }
+    .login_header {
+        margin-top: -80px;
+    }
+    .login_inputs {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px 20px;
+        margin-top: -140px;
+    }
+    .password_view {
+        position: relative;
+        top: -70px;
+        padding: 0;
+        left: -80px;
+        gap: 10px;
+    }
+    .icon_view {
+        position: relative;
+        width: 40px;
+        height: 21px;
+    }
+    .login_btn {
+        position: relative;
+        width: 80%;
+        top: -200px;
+    }
+}
+
+@media only screen and (max-width: 368px) {
+    .login_wrapper {
+        width: 100%;
+        height: 70%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .left_side {
+        width: 100%;
+        height: 100px;
+        margin-left: -120px;
+    }
+    .login_image img {
+        position: absolute;
+        top: -90%;
+        left: 10%;
+    }
+    .right_side {
+        width: 100%;
+        height: 100%;
+    }
+    .main_login form {
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2px;
+    }
+    .login_header {
+        margin-top: -80px;
+        font-size: .6rem;
+    }
+    .login_inputs {
+        width: 100%;
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 5px 20px;
+        margin-top: -160px;
+    }
+    .password_view {
+        position: relative;
+        top: -70px;
+        padding: 0;
+        left: -80px;
+        gap: 10px;
+    }
+    .icon_view {
+        position: relative;
+        width: 20px;
+        height: 11px;
+    }
+    .login_btn {
+        position: relative;
+        width: 80%;
+        top: -100px;
+    }
+}

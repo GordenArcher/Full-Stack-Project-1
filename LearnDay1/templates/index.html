@@ -1,0 +1,179 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'CSS/main.css' %}">
+    <title>Home | G-KANAD</title>
+</head>
+<body>
+    
+    <div class="main_page">
+        <div class="__root">
+            <div class="main_container">
+                
+                <div id="nav_container">
+                    <nav>
+                        <div class="logo">
+                            <a href="#home">
+                                G-KANAD
+                            </a>
+                        </div>
+
+                        <div class="mobile_Icon">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <div class="nav_links">
+                            <ul>
+                                <li><a href="/"> <i class="bi bi-house"></i> Home</a></li>
+                                <li><a href="#about" class="about"> <i class="bi bi-person"></i> About</a></li>
+                                <li><a href="/services"> <i class="bi bi-gear"></i> Services</a></li>
+                                <li><a href="/contact"> <i class="bi bi-person-lines-fill"></i> Contact</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a href="/logout"><i class="bi bi-box-arrow-left"></i>Logout</a></li>
+                                {% else %}
+                                <li><a href="/auth/a/register"><i class="bi bi-box-arrow-left"></i>Register</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <div class="main_content">
+                    <main>
+                        <div class="wrapper">
+                            <div id="home">
+                                <div class="home_content">
+                                    <div class="home_left">
+                                        <div class="home_message">
+                                            <h2>Hey &#128075; {{user}}<br> Welcome to Gorden's page <br> A Software Engineer</h2>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="home_right">
+                                        <div class="homeImage">
+                                            <img class="imageSlide" src="{% static '/images/home.png' %}" alt="home image">
+                                        </div>
+                                        <!-- <div class="buttons">
+                                            <button id="previous"> <i class="bi bi-arrow-left-circle"></i> </button>
+                                            <span class="tooltip prevTool">Previous</span>
+                                            <button id="next"> <i class="bi bi-arrow-right-circle"></i> </button>
+                                            <span class="tooltip nextTool">Next</span>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="about">
+                                <div class="about_container">
+                                    <div class="about_me">
+                                        <div class="header">
+                                            <h3>ABOUT ME</h3>
+                                        </div>
+
+                                        <div class="about_me_content">
+                                            <div class="main">
+                                                <div class="content_image">
+                                                    <img src="{% static '/images/about.png' %}" alt="">
+                                                </div>
+
+                                                <div class="content_message">
+                                                    <div class="about">
+                                                        <h4>Hey &#128075; <br> I'm Gorden Panyin Archer <br> a software Engineer! <br> and a student at <a href="https://Openlabs.edu.gh" target="_blank">OpenLabs Ghana</a> <br> and <a href="https://pentvars.edu.gh" target="_blank">Pentecost University</a></h4>
+                                                    </div>
+
+                                                    <div class="btn">
+                                                        <button id="callButton">Give me a Call <i class="bi bi-phone"></i> </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="what_i_do">
+                                        <div class="flex">
+                                            <div class="o1 bel">
+                                                <div class="head">
+                                                    <h2>O1</h2>
+                                                    <span>Full Stack Projects</span>
+                                                </div>
+                                                <hr>
+
+                                                <div class="body">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sint rem nemo aliquid, deserunt omnis, quidem minus repellat nesciunt, voluptatibus eaque corrupti! Soluta, nam nemo. Beatae dolorem deserunt cumque veritatis.</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="o2 bel">
+                                                <div class="head">
+                                                    <h2>O2</h2>
+                                                    <span>Front End Projects</span>
+                                                </div>
+                                                <hr>
+
+                                                <div class="body">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sint rem nemo aliquid, deserunt omnis, quidem minus repellat nesciunt, voluptatibus eaque corrupti! Soluta, nam nemo. Beatae dolorem deserunt cumque veritatis.</p>
+                                                </div>
+                                            </div>
+                                            <div class="o3 bel">
+                                                <div class="head">
+                                                    <h2>O3</h2>
+                                                    <span>Figma Design Projects</span>
+                                                </div>
+                                                <hr>
+
+                                                <div class="body">
+                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sint rem nemo aliquid, deserunt omnis, quidem minus repellat nesciunt, voluptatibus eaque corrupti! Soluta, nam nemo. Beatae dolorem deserunt cumque veritatis.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact_me_pop">
+            <div class="backfade"></div>
+            <div class="close_pop">
+                <button class="close"> <i class="bi bi-x"></i> </button>
+            </div>
+            <div class="pop_wrapper">
+                <div class="pop_vid">
+                    <img src="{% static '/images/about-extra-1.svg' %}">
+                </div>
+
+                <div class="pop_contact">
+                    <div class="contact_me_form">
+                        <div class="head">
+                            <h4>Call Us</h4>
+                            <hr>
+                        </div>
+
+                        <div class="main_box">
+                            <div class="call">
+                               <a href="tel:0208729505"> <input type="tel" value="0208729505" readonly> </a> 
+                               <a href="tel:0546214293"> <input type="tel" value="0546214293" readonly> </a>
+                               <a href="tel:0536505258"> <input type="tel" value="0536505258" readonly> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'JS/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+    <title>Register | G-KANAD</title>
+</head>
+
+<style>
+    .back_{
+    position: absolute;
+    top: 7%;
+    left: 2%;
+    }
+
+    .back_home{
+        position: relative;
+    }
+
+    .back_home button{
+        position: relative;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: none;
+        cursor: pointer;
+        transition: all .3s ease;
+    }
+
+    .back_home button:hover{
+        border: 1px solid #9e9e9e;
+        background: #ccc;
+    }
+
+    .back_home button i{
+        color: hsl(240, 100%, 50%);
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .back_home .tooltip{
+        position: relative;
+        margin-top: -90px;
+        padding: 5px;
+        background: #111111c8;
+        color: #fff;
+        border-radius: 3px;
+        visibility: hidden;
+        opacity: 0;
+        z-index: 10;
+    }
+
+    .back_home button:hover ~ .tooltip{
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
+
+<body>
+
+    <div class="container_wrapper">
+        <div class="register_wrapper">
+            <div class="back_">
+                <div class="back_home">
+                    <button>
+                        <i class="bi bi-arrow-left-circle-fill"></i>
+                    </button>
+
+                    <div class="tooltip">
+                        Back to home
+                    </div>
+                </div>
+            </div>
+
+            <div class="left_side">
+                <div class="login_image">
+                    <img src="{% static 'images/Login.svg' %}" alt="login image">
+                </div>
+            </div>
+
+            <div class="right_side">
+                <div class="main_login">
+                    <form action="register" method="post">
+                        {% csrf_token %}
+                        <div class="register_header">
+                            <h2>Register</h2>
+                        </div>
+
+                        {% for message in messages %}
+                        <div class="register_error">
+                            <h4>{{message}}</h4>
+                        </div>
+                        {% endfor %}
+
+                        <div class="register_inputs">
+                            <div class="username">
+                                <input type="text" name="username" required id="username" onchange="checkUserValue()">
+
+                                <label>Username</label>
+
+                                <i class="bi bi-person"></i>
+                            </div>
+
+                            <div class="email">
+                                <input type="email" name="email" required id="email" onchange="checkEmailValue()">
+
+                                <label>Email</label>
+
+                                <i class="bi bi-mail"></i>
+                            </div>
+
+                            <div class="password">
+                                <input type="password" name="password" required id="password" onchange="checkPasswordValue()">
+
+                                <label>Password</label>
+
+                                <i class="bi bi-lock"></i>
+
+                            </div>
+
+                            <div class="password2">
+                                <input type="password" name="password2" required id="password2" onchange="checkPassword2Value()">
+
+                                <label> Confirm Password</label>
+
+                                <i class="bi bi-lock"></i>
+
+                            </div>
+                        </div>
+
+                        <div class="register_btn">
+                            <button id="register" type="submit">Register</button>
+                            <div class="spinner_load">
+                                <span class="spinner"></span>
+                            </div>
+                        </div>
+
+                        <div class="login_link">
+                            <span>
+                                Don't have an account ?
+                                <a href="login" style="color: blue; text-decoration: none;">
+                                    Login
+                                </a>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="toast_message_success">
+            <div class="login_succes_toast">
+                <h3>Registered successfully</h3>
+                <span> <i class="bi bi-check-circle" ></i> </span>
+            </div>
+        </div>
+
+        <div class="toast_message_fail">
+            <div class="login_fail_toast">
+                <h3>LogIn Failed</h3>
+                <span> <i class="bi bi-x-octagon" ></i> </span>
+            </div>
+        </div> -->
+    </div>
+
+
+
+    <script src="{% static 'JS/index.js' %}"></script>
+</body>
+
+</html>
